@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A beautifully designed, smooth, responsive website demo." />
+    <title>Smooth & Modern Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">Smooth<span>Web</span></div>
+        <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">☰</button>
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#cta">Get Started</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-label="Intro">
+        <div class="hero-content">
+          <h1>Design that feels effortless</h1>
+          <p>Clean, responsive, and delightfully smooth—crafted with plain HTML & CSS.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#cta">Get Started</a>
+            <a class="btn ghost" href="#features">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="section features" aria-label="Key features">
+        <div class="container">
+          <h2 class="section-title">What you get</h2>
+          <div class="features-grid">
+            <article class="card">
+              <div class="icon" aria-hidden="true">⚡</div>
+              <h3>Performance</h3>
+              <p>Lightweight, fast-loading pages optimized for smooth interactions.</p>
+            </article>
+            <article class="card">
+              <div class="icon" aria-hidden="true">📱</div>
+              <h3>Responsive</h3>
+              <p>Looks great on phones, tablets, and desktops with adaptive layout.</p>
+            </article>
+            <article class="card">
+              <div class="icon" aria-hidden="true">🎨</div>
+              <h3>Modern UI</h3>
+              <p>Minimal, elegant style with soft shadows and tasteful animations.</p>
+            </article>
+            <article class="card">
+              <div class="icon" aria-hidden="true">🛡️</div>
+              <h3>Accessible</h3>
+              <p>Semantic HTML, good contrast, and reduced motion support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="section gallery" aria-label="Showcase gallery">
+        <div class="container">
+          <h2 class="section-title">Showcase</h2>
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1529333166437-7750f6f4e3e1?q=80&w=1200&auto=format&fit=crop" alt="Calm gradient sky" />
+              <figcaption>Calm gradients</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1519681393784-7d5d4dfc2f4d?q=80&w=1200&auto=format&fit=crop" alt="Abstract colorful shapes" />
+              <figcaption>Abstract vibes</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop" alt="Ocean waves" />
+              <figcaption>Smooth waves</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="City lights" />
+              <figcaption>City lights</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="section testimonials" aria-label="User testimonials">
+        <div class="container">
+          <h2 class="section-title">Loved by creators</h2>
+          <div class="testimonials-grid">
+            <blockquote class="quote">
+              <p>“It’s stunningly simple and buttery smooth.”</p>
+              <footer>— Alex, Designer</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>“Exactly what I needed to start quickly.”</p>
+              <footer>— Sam, Developer</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>“Clean code, clean vibes.”</p>
+              <footer>— Mia, Maker</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="section cta" aria-label="Call to action">
+        <div class="container">
+          <div class="cta-card">
+            <h2>Ready to build?</h2>
+            <p>Use this template as a starting point and make it yours.</p>
+            <a class="btn primary large" href="#">Download Template</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> SmoothWeb. Built with HTML & CSS.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      navToggle?.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', (!expanded).toString());
+        navList.classList.toggle('open');
+      });
+
+      // Update year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
